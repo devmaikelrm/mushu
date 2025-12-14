@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mushu 14/12</title>
+  <meta name="description" content="Felices cumpleaños para Osidaysi (Mushu). Sorpresa dinámica." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="fx"></canvas>
+  <div id="bgNoise" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="brand">
+      <span class="sigil" aria-hidden="true"></span>
+      <div class="brandText">
+        <div class="kicker">Para Osidaysi</div>
+        <div class="title">Mushu <span class="heart">💖</span></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn ghost" id="btnSound" type="button">Sonido: OFF</button>
+      <button class="btn ghost" id="btnFX" type="button">Efectos: ON</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero" id="heroCard">
+      <div class="heroLeft">
+        <h1 class="headline" id="headline">La caja se abre a medianoche.</h1>
+        <p class="sub" id="sub">
+          Hoy es <b>13</b>. Cuando el reloj marque <b>00:00</b> del <b>14/12</b>, la sorpresa se despierta sola.
+          <span class="tiny" id="tzLine"></span>
+        </p>
+
+        <div class="countdown" aria-label="Cuenta regresiva">
+          <div class="timeBox"><div class="n" id="cdD">00</div><div class="l">días</div></div>
+          <div class="timeBox"><div class="n" id="cdH">00</div><div class="l">horas</div></div>
+          <div class="timeBox"><div class="n" id="cdM">00</div><div class="l">min</div></div>
+          <div class="timeBox"><div class="n" id="cdS">00</div><div class="l">seg</div></div>
+        </div>
+
+        <div class="row">
+          <button class="btn ghost" id="btnWishes" type="button">Tocar para deseos ✨</button>
+        </div>
+
+        <div class="mini">
+          <div class="pill" id="statusPill">Estado: bloqueado</div>
+          <div class="pill" id="unlockPill">Desbloqueo:</div>
+        </div>
+      </div>
+
+      <div class="heroRight">
+        <div class="orb" id="orb" aria-hidden="true">
+          <div class="orbGlow"></div>
+          <div class="orbInner">
+            <img id="orbPhoto" class="orbPhoto" src="./assets/principal.jpg" alt="Mushu" />
+            <div class="orbRune" aria-hidden="true">M</div>
+            <div class="orbHint">toca / clic</div>
+          </div>
+        </div>
+
+        <div class="vault" id="vault">
+          <div class="vaultTop">
+            <div class="vaultTitle">Carta secreta</div>
+            <div class="vaultHint">Se revela al abrirse</div>
+          </div>
+          <div class="vaultBody">
+            <div class="type" id="type"></div>
+            <div class="caret" id="caret"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card panel tilt" id="panel1">
+        <h2>Constelación Mushu</h2>
+        <p class="muted">
+          Esto es interactivo: mueve el mouse (o el dedo) y vas a doblar el universo.
+          Cada chispa es un recuerdo que vuelve.
+        </p>
+        <div class="gallery" id="gallery">
+          <div class="ph ph1" data-label="Risa" style="background-image:url('./assets/divertida.jpg');"></div>
+          <div class="ph ph2" data-label="Calma" style="background-image:url('./assets/brillo.jpg');"></div>
+          <div class="ph ph3" data-label="Hogar" style="background-image:url('./assets/normal.jpg');"></div>
+          <div class="ph ph4" data-label="Nosotros" style="background-image:url('./assets/normal1.jpg');"></div>
+        </div>
+      </article>
+
+      <article class="card panel">
+        <h2>3 promesas</h2>
+        <ul class="list" id="promises">
+          <li>Hacerte reír aunque el día venga pesado.</li>
+          <li>Cuidarte sin pedir permiso para quererte.</li>
+          <li>Elegirte cuando el mundo se vuelva ruido.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Un botón peligroso</h2>
+        <p class="muted">Este botón suelta deseos como partículas. Úsalo cuando quieras.</p>
+        <button class="btn full" id="btnBurst" type="button">Soltar deseos ✨</button>
+      </article>
+    </section>
+
+    <section class="card final" id="finalCard">
+      <h2 id="finalTitle">Cuando se abra…</h2>
+      <p class="muted" id="finalText">
+        vas a ver fuegos, confetti, una carta animada y el cielo cambiando de color.
+        Puedes editar todo el texto en <code>app.js</code>.
+      </p>
+      <div class="sign">
+        <span>De tu esposo</span>
+        <span class="soft">(con amor y un toque de magia)</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Hecho para <b>Osidaysi</b> (Mushu) 💖</span>
+    <span class="soft" id="clockLine"></span>
+  </footer>
+
+
+  <div id="midnightOverlay" class="midnightOverlay" aria-hidden="true">
+    <div class="midnightCard">
+      <div class="midnightGlow"></div>
+      <div class="midnightText">Ya es tu día, Mushu. 💖</div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
