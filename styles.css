@@ -373,6 +373,16 @@ body{
 
 .tilt{ transform-style: preserve-3d; }
 
+.locked .lockable{
+  opacity: .35;
+  filter: grayscale(1);
+  pointer-events: none;
+  transition: opacity .4s ease, filter .4s ease;
+}
+.locked .lockable .orbHint{
+  opacity: 0;
+}
+
 
 
 /* Photos in gallery */

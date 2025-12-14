@@ -494,6 +494,7 @@ Mi Mushu.`,
     if(unlocked) return;
     unlocked = true;
 
+    document.body.classList.remove("locked");
     el.statusPill.textContent = "Estado: abierto";
     el.headline.textContent = CONFIG.headlineOpen;
     el.finalTitle.textContent = "Feliz cumpleaños, Mushu 💖";
@@ -577,6 +578,7 @@ Mi Mushu.`,
 
   // ========= Init =========
   function init(){
+    document.body.classList.add("locked");
     el.statusPill.textContent = "Estado: bloqueado";
     el.headline.textContent = CONFIG.headlineLocked;
     el.type.textContent = "⏳ Esperando la hora mágica";
